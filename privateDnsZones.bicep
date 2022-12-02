@@ -78,10 +78,7 @@ param parPrivateDnsZones array = [
 param parTags object = {}
 
 @sys.description('Resource ID of VNet for Private DNS Zone VNet Links. Default: Empty String')
-param parVirtualNetworkIdToLink string = ''
-
-@sys.description('Set Parameter to true to Opt-out of deployment telemetry. Default: false')
-param parTelemetryOptOut bool = false
+param parVirtualNetworkIdToLink string = '/subscriptions/c960ecf7-324a-46ca-ac48-2ddb0baee7dc/resourcegroups/rg-hub/providers/Microsoft.Network/virtualNetworks/vnet-hub-swe'
 
 var varAzBackupGeoCodes = {
   australiacentral: 'acl'

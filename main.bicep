@@ -10,11 +10,19 @@ param subscriptionId string = 'c960ecf7-324a-46ca-ac48-2ddb0baee7dc'
 param parDnsZonesResourceGroupName string = 'rg-privateDnsZones'
 
 // create a resource group for private DNS Zones
-module spokeResourceGroup 'resourceGroup.bicep' = {
+module dnsResourceGroup 'resourceGroup.bicep' = {
   scope: subscription(subscriptionId)
   name: 'create-${parDnsZonesResourceGroupName}'
   params: {
     parRegion: parRegion
     parSpokeResourceGroupName: parDnsZonesResourceGroupName
+  }
+}
+
+module privateDnsZones 'privateDnsZones.bicep' = {
+  scope: resourceGroup(parDnsZonesResourceGroupName)
+  name: 'create DNS zones'
+  params: {
+    parLocation: parRegion
   }
 }

@@ -25,5 +25,4 @@ jobs:
       with:
         scope: subscription 
         region: swedencentral
-        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         template: main.bicep
