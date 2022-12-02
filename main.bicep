@@ -1,4 +1,4 @@
-//targetScope = 'subscription'
+targetScope = 'subscription'
 
 @description('Provide location for spoke resource group.')
 param parRegion string = 'swedencentral'
