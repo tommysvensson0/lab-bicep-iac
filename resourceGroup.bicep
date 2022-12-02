@@ -1,20 +1,17 @@
 targetScope = 'subscription'
 
-@description('Provide location for spoke resource group.')
+@description('Provide location for resource group.')
 param parRegion string
 
-@description('Provide a name for the spoke resource group.')
-param parSpokeResourceGroupName string
-
-//@description('Provide a name for the spoke resource group.')
-//param parDnsZonesResourceGroupName string
+@description('Provide a name for the resource group.')
+param parResourceGroupName string
 
 resource resResourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
-  name: parSpokeResourceGroupName
+  name: parResourceGroupName
   location: parRegion
 }
 
-output outSpokeNetworkingResourceGroup string = resResourceGroup.name
-output outSpokeNetworkingResourceGroupId string = resResourceGroup.id
+output outNetworkingResourceGroup string = resResourceGroup.name
+output outNetworkingResourceGroupId string = resResourceGroup.id
 
 
