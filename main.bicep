@@ -21,7 +21,7 @@ module dnsResourceGroup 'resourceGroup.bicep' = {
 
 module privateDnsZones 'privateDnsZones.bicep' = {
   scope: resourceGroup(parDnsZonesResourceGroupName)
-  name: 'create DNS zones'
+  name: 'create-DNS-zones'
   params: {
     parLocation: parRegion
   }
