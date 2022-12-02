@@ -50,7 +50,7 @@ module hubVirtualNetwork 'hubVirtualNetwork.bicep' = {
     parVirtualNetworkName: 'vnet-hub-swe'
   }
 }
-
+/*
 // declare private DNS resolver
 module hubPrivateDnsResolver 'hubDnsResolver.bicep' = {
   scope: resourceGroup(hubResourceGroup.name)
@@ -64,3 +64,4 @@ module hubPrivateDnsResolver 'hubDnsResolver.bicep' = {
     hubVnetId: hubVirtualNetwork.outputs.outHubVnetId
   }
 }
+*/
